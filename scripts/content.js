@@ -1,5 +1,4 @@
 const char_limit = 100000;
-const apiKey = "QfM31eFVdKlmvOrimsbF7y5ytutIdDShywzdzshy";
 
 function display(summary) {
     header = document.createElement("div");
