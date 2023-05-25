@@ -1,7 +1,9 @@
 # co:ndense
 co:ndense is a Chrome Extension that summarizes webpages using the summarize endpoint.
 
-Created as an onboarding exercise to learn more about Cohere's products.
+I made it as an onboarding exercise to learn more about Cohere's products. This is what it look like (purple header):
+
+![Here's what it looks like](example.png)
 
 Ideas for future work:
 - allow users to set their own API options like model and temperature
