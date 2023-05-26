@@ -11,7 +11,8 @@ I made it as an onboarding exercise to learn more about Cohere's products. This 
 3. At the top right, turn on Developer mode.
 4. Click Load unpacked.
 5. Find and select the app or extension folder.
-6. Open a new tab in Chromeand then click Apps and then click the app or extension. Make sure it loads and works correctly.
+6. Select Details on the app, and then add an API key (use a trial key) in Extension Options.
+7. Open a new tab in Chromeand then click Apps and then click the app or extension. Make sure it loads and works correctly.
 
 ## Ideas for future work
 - allow users to set their own API options like model and temperature
