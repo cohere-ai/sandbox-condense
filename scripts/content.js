@@ -28,9 +28,9 @@ function summarize(text) {
             "body": JSON.stringify({
                 "length": "auto",
                 "format": "auto",
-                "model": "summarize-medium",
+                "model": "summarize-xlarge",
                 "extractiveness": "low",
-                "temperature": 0.3,
+                "temperature": 0.1,
                 "text": text,
                 "additional_command": "of this webpage"
             })
