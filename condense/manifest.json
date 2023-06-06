@@ -1,0 +1,23 @@
+{
+    "name": "co:ndense",
+    "version": "1.0",
+    "description": "Summarizes web pages",
+    "manifest_version": 3,
+
+    "permissions": ["activeTab", "scripting", "storage"],
+
+    "options_ui": {
+        "page": "options/options.html",
+        "open_in_tab": false
+    },
+
+    "content_scripts": [{
+        "js": ["scripts/content.js", "scripts/jquery-3.7.0.min.js"],
+        "matches": [
+            "<all_urls>"
+        ],
+        "exclude_globs": [
+            "*://docs.google.com/*"
+        ]
+    }]
+}
