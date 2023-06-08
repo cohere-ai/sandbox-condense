@@ -48,7 +48,7 @@ function summarize(text) {
             // how they affect the summarization behaviour.
             // Reference: https://docs.cohere.com/reference/summarize-2
             "body": JSON.stringify({
-                "length": "short",
+                "length": "large",
                 "format": "auto",
                 "model": "summarize-xlarge",
                 "extractiveness": "low",
