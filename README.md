@@ -40,6 +40,13 @@ Here's what it look like - it's the purple header:
 6. Select Details on the app, and then add an API key (use a trial key) in Extension Options.
 7. Open a new tab in Chrome and then click Apps and then click the app or extension. Make sure it loads and works correctly.
 
+## Customizing your summarizations
+The summarize function in [condense/scripts/content.js](condense/scripts/content.js) contains various parameters for Cohere's Summarize API. You can adjust them to see how different values will affect the summarization.
+
+For example, you may wish to customize the API calls by requesting `length: short` summaries on home pages, where there isn't much to summarize, and `length: large` on pages with a lot of text.
+
+You can read more about the available parameters [here](https://docs.cohere.com/reference/summarize-2).
+
 ## Ideas for future work
 - Allow users to set their own API options like model and temperature
 - Allow users to request longer summaries if they want more detail
