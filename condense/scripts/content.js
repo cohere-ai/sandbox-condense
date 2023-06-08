@@ -124,7 +124,7 @@ function getVisibleText() {
 chrome.storage.sync.get('apiKey', key => {
     if (key.apiKey === undefined) {
         // If there's no saved API key, tell the user how to add one
-        display("Please set an API key in co:ndense > Options");
+        display("Please set an API key in Condense > Options. You can get one from https://dashboard.cohere.ai/api-keys");
     } else {
         // If there is a key, we can use it to summarize the page
         const truncatedVisibleText = getVisibleText();
