@@ -48,7 +48,7 @@ function summarize(text) {
             // how they affect the summarization behaviour.
             // Reference: https://docs.cohere.com/reference/summarize-2
             "body": JSON.stringify({
-                "length": "large",
+                "length": "long",
                 "format": "auto",
                 "model": "summarize-xlarge",
                 "extractiveness": "low",
@@ -120,18 +120,23 @@ function getVisibleText() {
     return visibleText.join('\n');
 }
 
-// This code block runs when pages are loaded.
-chrome.storage.sync.get('apiKey', key => {
-    if (key.apiKey === undefined) {
-        // If there's no saved API key, tell the user how to add one
-        display("Please set an API key in Condense > Options. You can get one from https://dashboard.cohere.ai/api-keys");
-    } else {
-        // If there is a key, we can use it to summarize the page
-        const truncatedVisibleText = getVisibleText();
-        // During the dev process, it's helpful to be able to see exactly what
-        // text is being summarized
-        console.log(truncatedVisibleText);
+// Attempt to summarize the page
+function main() {
+    chrome.storage.sync.get('apiKey', key => {
+        if (key.apiKey === undefined) {
+            // If there's no saved API key, tell the user how to add one
+            display("Please set an API key in Condense > Options. You can get one from https://dashboard.cohere.ai/api-keys");
+        } else {
+            // If there is a key, we can use it to summarize the page
+            const truncatedVisibleText = getVisibleText();
+            // During the dev process, it's helpful to be able to see exactly what
+            // text is being summarized
+            console.log(truncatedVisibleText);
 
-        summarize(truncatedVisibleText);
-    }
-});
+            summarize(truncatedVisibleText);
+        }
+    });
+}
+
+// This calls main() when pages are loaded.
+main()
