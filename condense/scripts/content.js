@@ -7,7 +7,7 @@
 // level of this repository.
 
 
-// Summarize endpoint is currently limited to 100k chars
+// Limit input to 100k chars
 const charLimit = 100000;
 
 // Display the text at the top of the page
@@ -44,32 +44,27 @@ function summarize(text) {
                 "Authorization": "Bearer " + key.apiKey,
                 "Request-Source": "sandbox-condense"
             },
-            // These are the summarize endpt paramters.
+            // These are the chat endpt paramters.
             // Try playing around with them and reloading the extension to see
             // how they affect the summarization behaviour.
-            // Reference: https://docs.cohere.com/reference/summarize-2
+            // Reference: https://docs.cohere.com/reference/chat
             "body": JSON.stringify({
-                "length": "long",
-                "format": "auto",
-                "model": "summarize-xlarge",
-                "extractiveness": "low",
-                "temperature": 0.1,
-                "text": text,
-                // We tell the model that it's summarizing a webpage
-                "additional_command": "of this webpage"
+                "message": text,
+                "preamble": "Generate a summary of this webpage: ",
+                "temperature": 0.1
             })
         };
 
-        fetch('https://api.cohere.ai/v1/summarize', options)
+        fetch('https://api.cohere.ai/v1/chat', options)
             .then((response) => response.json())
             .then((response) => {
-                if (response.summary === undefined) {
-                    // If there's no summary in the endpoint's response,
+                if (response.text === undefined) {
+                    // If there's no text in the endpoint's response,
                     // display whatever error message it returned
                     display("There was an error: " + response.message);
                 } else {
                     // Otherwise, display the summary
-                    display("tl;dr: " + response.summary);
+                    display("tl;dr: " + response.text);
                 }
             });
     });
