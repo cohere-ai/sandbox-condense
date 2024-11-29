@@ -44,10 +44,10 @@ You can see the Condense summary in the purple header here:
 
 ## How to use the extension
 1. Clone this repo by downloading it to your local computer.
-2. Go to chrome://extensions/.
+2. In your Chrome browser, go to `chrome://extensions/`.
 3. At the top right, turn on Developer mode.
-4. Click Load unpacked.
-5. Find and select the folder where you downloaded this repo, then select the /condense folder within it.
+4. Near the top left, click `Load unpacked`.
+5. Find and select the folder where you downloaded this repo, then select the `/condense` subdirectory (not the top-level directory).
 6. Select Details on the app, go to Extension Options, and then add an API key (use a trial key).
 7. Open a new tab in Chrome, click Apps, and then click the app or extension.
 8. You'll know it's working if you see a purple banner at the top of every new page you load in Chrome.
